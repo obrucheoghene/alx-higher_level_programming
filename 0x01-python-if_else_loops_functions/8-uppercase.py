@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 def uppercase(str):
     """Print string in uppercase."""
     for char in str:
