@@ -5,5 +5,6 @@ def safe_print_integer(value):
         return True
     except TypeError:
         return False
-    finally:
-        return False
+    else:
+        return True
+    return False
