@@ -3,11 +3,8 @@
 
 
 class Square:
-    """My first square task 0"""
+    """Square class task 1"""
     
     def __init__(self, size):
-        """Initialize the square class
-        Args:
-            size (:obj,`str`, optional): x param
-        """
+        """Initialize the square class"""
         self.__size = size
