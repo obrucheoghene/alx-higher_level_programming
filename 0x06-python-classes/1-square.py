@@ -3,7 +3,7 @@
 
 
 class Square:
-    """Square class task 1"""    
+    """Square class task 1"""
     def __init__(self, size):
         """Initialize the square class"""
         self.__size = size
