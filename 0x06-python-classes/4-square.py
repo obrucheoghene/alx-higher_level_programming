@@ -6,7 +6,7 @@ class Square:
     """Square class task 1"""
     def __init__(self, size=0):
         """Initialize the square class"""
-        self.__size = value
+        self.size = value
 
     def area(self):
         """Calculates the area of the square"""
