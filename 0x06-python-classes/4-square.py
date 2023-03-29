@@ -6,7 +6,7 @@ class Square:
     """Square class task 1"""
     def __init__(self, size=0):
         """Initialize the square class"""
-        self.size = value
+        self.__size = size
 
     def area(self):
         """Calculates the area of the square"""
@@ -20,9 +20,9 @@ class Square:
     @size.setter
     def size(self, value):
         """Size setter method"""
-        if type(size) is not int:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
