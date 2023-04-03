@@ -169,5 +169,5 @@ class Rectangle:
             Rectangle: Returns a new rectangle.
         """
         if type(size) is not int:
-            raise TypeError("size must be an integer")
+            size = 0
         return Rectangle(size, size)
