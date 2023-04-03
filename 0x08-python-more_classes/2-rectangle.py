@@ -75,7 +75,7 @@ class Rectangle:
 
     def area(self):
         """
-        Calcuate the area of the retangle.
+        Calcuate and return the area of the retangle.
 
         Returns:
             int: The area of the reactangle.
@@ -84,7 +84,7 @@ class Rectangle:
 
     def perimeter(self):
         """
-        Calcuate the perimeter of the retangle.
+        Calcuate and return the perimeter of the retangle.
 
         Returns:
             int: The perimeter of the reactangle.
