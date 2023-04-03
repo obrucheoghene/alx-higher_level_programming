@@ -99,7 +99,7 @@ class Rectangle:
         Returns a string represention of the rectangle to end users
 
         Returns:
-            string: The area of the rectantle in #
+            str: The area of the rectantle in #
         """
         output = ''
 
@@ -110,3 +110,14 @@ class Rectangle:
             output = output + "#" * (self.__width) + "\n"
         output = output + "#" * (self.__width)
         return output
+
+    def __repr__(self):
+        """
+        Return a string representation of the rectangle that can be
+        used with eval() to recreate the rectangle.
+
+        Returns:
+            str: A string representation of the rectangle that can be used with
+            eval()
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
