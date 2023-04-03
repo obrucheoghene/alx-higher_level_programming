@@ -168,6 +168,4 @@ class Rectangle:
         Returns:
             Rectangle: Returns a new rectangle.
         """
-        if type(size) is not int:
-            size = 0
         return Rectangle(size, size)
