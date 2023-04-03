@@ -112,8 +112,8 @@ class Rectangle:
             return output
 
         for i in range(self.__height - 1):
-            output = output + Rectangle.print_symbol * (self.__width) + "\n"
-        output = output + Rectangle.print_symbol * (self.__width)
+            output = output + str(self.print_symbol) * (self.__width) + "\n"
+        output = output + str(self.print_symbol) * (self.__width)
         return output
 
     def __repr__(self):
