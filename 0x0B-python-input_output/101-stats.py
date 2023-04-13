@@ -2,11 +2,12 @@
 """
 This module reads from standard input and computes metrics.
 """
+import sys
 
 
-def log_stats(size, status_codes):
-    """
-    Log accumulated computes metrics.
+
+def print_stats(size, status_codes):
+    """Print accumulated metrics.
     Args:
         size (int): The accumulated read file size.
         status_codes (dict): The accumulated count of status codes.
@@ -27,7 +28,7 @@ if __name__ == "__main__":
     try:
         for line in sys.stdin:
             if count == 10:
-                log_stats(size, status_codes)
+                print_stats(size, status_codes)
                 count = 1
             else:
                 count += 1
@@ -48,8 +49,8 @@ if __name__ == "__main__":
             except IndexError:
                 pass
 
-        log_stats(size, status_codes)
+        print_stats(size, status_codes)
 
     except KeyboardInterrupt:
-        log_stats(size, status_codes)
+        print_stats(size, status_codes)
         raise
