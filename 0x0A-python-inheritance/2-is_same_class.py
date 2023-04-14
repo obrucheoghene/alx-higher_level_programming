@@ -8,7 +8,7 @@ exactly an instance of the specified class ; otherwise False.
 def is_same_class(obj, a_class):
     """
     Check if object i exactly instance of a class
-    
+
     Args:
         obj (object): The object to be checked
         a_class (a_class): The class to be compared with
@@ -16,4 +16,6 @@ def is_same_class(obj, a_class):
     Return:
         (bool): True if instance, False otherwise
     """
-    return isinstance(obj, a_class)
+    if type(obj) == a_class:
+        return True
+    return False
