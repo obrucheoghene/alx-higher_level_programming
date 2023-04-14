@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
 This module defines a function that returns true True if the object inherits
-from a specified class ; otherwise False.
+a specified class ; otherwise False.
 """
 
 
 def inherits_from(obj, a_class):
     """
-    Check if object inherits from a specified class
+    Check if object inherits a specified class
 
     Args:
         obj (object): The object to be checked
