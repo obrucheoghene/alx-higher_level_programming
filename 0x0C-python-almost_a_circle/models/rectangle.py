@@ -5,6 +5,11 @@ This module defines a rectangle class
 from models.base import Base
 
 
+type_error_msg = "must be an integer"
+size_value_error_msg = "must be > 0"
+coordinate_value_error_msg = "must be >= 0"
+
+
 class Rectangle(Base):
     """
     Represents the Rectangle class
@@ -20,6 +25,11 @@ class Rectangle(Base):
             x (int): The x coordinate of the Rectangle.
             y (int): The y coordinate of the Rectangle.
             id (int): The indentity of the Rectangle.
+
+        Raises:
+            TypeError: If width, height, x or y is not int.
+            ValueError: If width or height is <= 0.
+            ValueError: If x or y < 0.
         """
         super().__init__(id)
         self.width = width
@@ -39,6 +49,11 @@ class Rectangle(Base):
         """
         Setter for the Rectangle width.
         """
+        if type(value) is not int:
+            raise TypeError("width " + type_error_msg)
+
+        if value <= 0:
+            raise ValueError("width " + size_value_error_msg)
         self.__width = value
 
     @property
@@ -53,6 +68,11 @@ class Rectangle(Base):
         """
         Setter for the Rectangle height.
         """
+        if type(value) is not int:
+            raise TypeError("height " + type_error_msg)
+
+        if value <= 0:
+            raise ValueError("height " + size_value_error_msg)
         self.__height = value
 
     @property
@@ -67,6 +87,11 @@ class Rectangle(Base):
         """
         Setter for the Rectangle x coordinate.
         """
+        if type(value) is not int:
+            raise TypeError("x " + type_error_msg)
+
+        if value < 0:
+            raise ValueError("x " + coordinate_value_error_msg)
         self.__x = value
 
     @property
@@ -81,4 +106,9 @@ class Rectangle(Base):
         """
         Setter for the Rectangle y coordinate.
         """
+        if type(value) is not int:
+            raise TypeError("y " + type_error_msg)
+
+        if value < 0:
+            raise ValueError("y " + coordinate_value_error_msg)
         self.__y = value
