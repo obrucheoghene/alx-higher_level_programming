@@ -112,3 +112,19 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y " + coordinate_value_error_msg)
         self.__y = value
+
+    def area(self):
+        """
+        Return the area of the rectangle
+        """
+        return self.__height * self.__width
+
+    def display(self):
+        """
+        Prints Rectangle instance with #
+        """
+        for h in range(self.__height):
+            for w in range(self.__width):
+                print("#", end="")
+            else:
+                print()
