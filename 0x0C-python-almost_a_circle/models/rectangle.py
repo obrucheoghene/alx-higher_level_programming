@@ -123,11 +123,39 @@ class Rectangle(Base):
         """
         Prints Rectangle instance with #
         """
+        [print() for y in range(self.__y)]
         for h in range(self.__height):
+            [print(" ", end="") for x in range(self.__x)]
             for w in range(self.__width):
                 print("#", end="")
             else:
                 print()
+
+    def update(self, *args):
+        """
+        Update teh rectangle class
+
+        Args:
+            *args (list): New attribute values
+        """
+        if args and len(args) != 0:
+            i = 0
+            for arg in args:
+                if i == 0:
+                    if arg is None:
+                        self.__init__(self.__width, self.__height, self.__x,
+                                      self.__y)
+                    else:
+                        self.id = arg
+                elif i == 1:
+                    self.__width = arg
+                elif i == 2:
+                    self.__height = arg
+                elif i == 3:
+                    self.__x = arg
+                elif i == 4:
+                    self.__y = arg
+                i += 1
 
     def __str__(self):
         """
@@ -137,5 +165,3 @@ class Rectangle(Base):
                                                        self.__x, self.__y,
                                                        self.__width,
                                                        self.__height)
-
-
