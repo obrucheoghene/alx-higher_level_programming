@@ -3,6 +3,7 @@
 This module defines the "base" classe for all other classes
 in this project.
 """
+import json
 
 
 class Base:
