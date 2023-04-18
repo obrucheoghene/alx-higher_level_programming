@@ -131,7 +131,7 @@ class Rectangle(Base):
             else:
                 print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Update teh rectangle class
 
@@ -156,6 +156,35 @@ class Rectangle(Base):
                 elif i == 4:
                     self.__y = arg
                 i += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.__width, self.__height, self.__x,
+                                      self.__y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.__width = v
+                elif k == "height":
+                    self.__height = v
+                elif k == "x":
+                    self.__x = v
+                elif k == "y":
+                    self.__y = v
+
+    def to_dictionary(self):
+        """
+        Return the dictionary representation of Rectangle.
+        """
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
 
     def __str__(self):
         """
