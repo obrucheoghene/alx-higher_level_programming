@@ -63,7 +63,7 @@ class Base:
         Args:
             json_string (str): The string representation a list of
             dictionaries
-        
+ 
         Returns:
             (list) : If json_string is None or empty, return an empty list
             Otherwise, return the list represented by json_string
