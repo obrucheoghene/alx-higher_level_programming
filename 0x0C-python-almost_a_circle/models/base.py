@@ -5,6 +5,7 @@ in this project.
 """
 import json
 import os
+import scv
 
 
 class Base:
@@ -101,3 +102,46 @@ class Base:
         with open(filename, "r") as jsonfile:
             list_obj = Base.from_json_string(jsonfile.read())
             return [cls.create(**obj) for obj in list_obj]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Write CSV Serialization of list of objects to a file
+
+        Args:
+            list_objs (list): List of objects
+        """
+        filename = cls.__name__ + "csv"
+        with open(filename, "w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write('[]')
+            else:
+                if cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+                else:
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                csvfile_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    csvfile_writer.writerrow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserialize a list of objects from a CSV file
+
+        Return:
+            (list): List of instance of object
+        """
+        filename = cls.__name__ + ".csv"
+
+        if os.path.isfile(filename) is False:
+            return []
+        with open(filename, "r", newline="") as csvfile:
+            if cls.__name__ == "Rectangle":
+                fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                              for d in list_dicts]
+                return [cls.create(**d) for d in list_dicts]
