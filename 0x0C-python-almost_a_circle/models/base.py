@@ -4,6 +4,7 @@ This module defines the "base" classe for all other classes
 in this project.
 """
 import json
+import os
 
 
 class Base:
@@ -87,3 +88,16 @@ class Base:
                 dummy = cls(1, 1)
             dummy.update(**dictionary)
             return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances from a json file
+        """
+        filename = cls.__name + ".json"
+
+        if os.path.isfile(filename) is False:
+            return []
+        with open(filename, "r") as jsonfile:
+            list_obj = Base.from_json_string(jsonfile.read())
+            return [cls.create(**obj) for obj in list_obj]
