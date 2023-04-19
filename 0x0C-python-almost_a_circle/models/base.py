@@ -94,7 +94,7 @@ class Base:
         """
         Returns a list of instances from a json file
         """
-        filename = cls.__name + ".json"
+        filename = cls.__name__ + ".json"
 
         if os.path.isfile(filename) is False:
             return []
