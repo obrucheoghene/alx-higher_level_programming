@@ -61,9 +61,13 @@ class Base:
         Returns the list of JSON string representation
 
         Args:
-            json_string (string): The string representation a list of
+            json_string (str): The string representation a list of
             dictionaries
+        
+        Returns:
+            (list) : If json_string is None or empty, return an empty list
+            Otherwise, return the list represented by json_string
         """
         if json_string is None or json_string == "[]":
             return []
-        return json.load(json_string)
+        return json.loads(json_string)
