@@ -6,6 +6,7 @@ in this project.
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -145,3 +146,38 @@ class Base:
             list_dicts = [dict([k, int(v)] for k, v in d.items())
                               for d in list_dicts]
             return [cls.create(**d) for d in list_dicts]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module.
+        Args:
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
+        """
+
+        for rect in list_rectangles:
+            turtle.showturtle()
+            turtle.up()
+            turtle.goto(rect.x, rect.y)
+            turtle.down()
+            for i in range(2):
+                turtle.forward(rect.width)
+                turtle.left(90)
+                turtle.forward(rect.height)
+                turtle.left(90)
+            turtle.hideturtle()
+
+        turtle.color("#b5e3d8")
+        for sq in list_squares:
+            turtle.showturtle()
+            turtle.up()
+            turtle.goto(sq.x, sq.y)
+            turtle.down()
+            for i in range(2):
+                turtle.forward(sq.width)
+                turtle.left(90)
+                turtle.forward(sq.height)
+                turtle.left(90)
+            turtle.hideturtle()
+
+        turtle.exitonclick()
