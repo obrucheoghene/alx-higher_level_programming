@@ -6,7 +6,7 @@ from sys import argv
 import MySQLdb
 
 
-def list_all_state():
+def list_all_states():
     """List all states"""
     db = MySQLdb.connect(
         user=argv[1],
@@ -31,4 +31,7 @@ def list_all_state():
 
 
 if __name__ == '__main__':
-    list_all_state()
+    if len(argv) < 4:
+        print("3 arguments required")
+    else:
+        list_all_states()
