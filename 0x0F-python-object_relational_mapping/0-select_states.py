@@ -31,7 +31,4 @@ def list_all_states():
 
 
 if __name__ == '__main__':
-    if len(argv) < 4:
-        print("3 arguments required")
-    else:
-        list_all_states()
+    list_all_states()
