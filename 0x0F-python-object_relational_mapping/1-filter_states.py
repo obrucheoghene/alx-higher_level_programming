@@ -3,6 +3,7 @@
 import MySQLdb
 from sys import argv
 
+
 def list_all_states_N():
     """List all states that starts with Uppercase N"""
     db = MySQLdb.connect(
