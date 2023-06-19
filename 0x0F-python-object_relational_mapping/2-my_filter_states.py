@@ -28,7 +28,6 @@ def list_states_by_names():
 
     for row in data:
         print(row)
-
     cursor.close()
     db.close()
 
