@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-
 """
     A script that lists all states from the database hbtn_0e_0_usa
-    starting with capital letter N
+    matching a name
 """
-
-
 import sys
 import MySQLdb
 
 
-if __name__ == '__main__':
+def list_states_by_names():
+    """List all states by name"""
+
     db = MySQLdb.connect(user=sys.argv[1],
                          passwd=sys.argv[2],
                          db=sys.argv[3],
@@ -32,3 +31,7 @@ if __name__ == '__main__':
 
     cursor.close()
     db.close()
+
+
+if __name__ == '__main__':
+    list_states_by_names()
