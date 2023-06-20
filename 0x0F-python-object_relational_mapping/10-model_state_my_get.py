@@ -19,7 +19,7 @@ def filter_states_by_name():
     if state is None:
         print("Not found")
     else:
-        print(state.id, state.name, sep=": ")
+        print(state.id)
 
 
 if __name__ == "__main__":
