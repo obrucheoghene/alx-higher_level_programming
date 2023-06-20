@@ -15,11 +15,10 @@ def filter_states_by_name():
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State).filter(State.name == (argv[4],))
-
-    if states is None:
-        print("Not found")
-    else:
+    try:
         print(states[0].id)
+    except IndexError:
+        print("Not found")
 
 
 if __name__ == "__main__":
