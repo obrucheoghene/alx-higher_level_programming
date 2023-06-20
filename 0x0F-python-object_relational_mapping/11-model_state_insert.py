@@ -18,6 +18,7 @@ def add_state():
     session.add(new_state)
     state = session.query(State).filter_by(name='Louisiana').first()
     print(state.id)
+    
     session.commit()
 
 
