@@ -10,7 +10,7 @@ mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
 
 
-class State(Base):
+class City(Base):
     """
     Represents the City Class
     attrs
