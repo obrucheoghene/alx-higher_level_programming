@@ -14,11 +14,10 @@ def add_state():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_state = session.add(name='Louisiana')
+    new_state = State(name='Louisiana')
     session.add(new_state)
-    state = session.query(State).filter_by(name='Louisiana').first()
-    print(state.id)
-    
+    new_instance = session.query(State).filter_by(name='Louisiana').first()
+    print(new_instance.id)
     session.commit()
 
 
