@@ -14,12 +14,12 @@ def filter_states_by_name():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(State.name.match(argv[4])).first()
+    states = session.query(State).filter(State.name == (argv[4],))
 
-    if state is None:
+    if states is None:
         print("Not found")
     else:
-        print(state.id)
+        print(states[0].id)
 
 
 if __name__ == "__main__":
