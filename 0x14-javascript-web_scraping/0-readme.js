@@ -10,7 +10,7 @@ if (process.argv.length < 3) {
 const file = process.argv[2];
 try {
   const data = fs.readFileSync(file, 'utf8');
-  process.stdout.write(data);
+  console.log(data);
 } catch (error) {
-  process.stderr.write(error);
+  console.log(error);
 }
