@@ -13,7 +13,7 @@ request(url, function (error, response, body) {
         if (records[todo.userId]) {
           records[todo.userId]++;
         } else {
-          records[todo.userId] = 0;
+          records[todo.userId] = 1;
         }
       }
     });
