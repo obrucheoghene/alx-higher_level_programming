@@ -10,6 +10,6 @@ request(api, function (error, response, body) {
     const movies = data.results
       .filter(movie => movie.characters
         .find(character => character.match(/\/people\/18\/?$/)));
-    console.log(movies);
+    console.log(movies.length);
   }
 });
